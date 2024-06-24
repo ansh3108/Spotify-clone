@@ -50,6 +50,10 @@ nav ul li {
     background-position: center;
 }
 
+.songList {
+    width: 100%;
+}
+
 .bottom {
     position: sticky;
     bottom: 0;
@@ -64,13 +68,29 @@ nav ul li {
 
 .icons {
     margin-top: 14px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
 .icons i {
     cursor: pointer;
 }
 
-#myProgressBar {
+.volumeControl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.volumeControl i {
+    cursor: pointer;
+}
+
+#myProgressBar, #volumeBar {
     width: 80vw; 
     cursor: pointer;
 }
@@ -93,6 +113,11 @@ nav ul li {
     justify-content: space-between;
     align-items: center;
     border-radius: 34px;
+    transition: background-color 0.3s ease;
+}
+
+.songItem:hover {
+    background-color: lightgrey;
 }
 
 .songItem img {
