@@ -5,6 +5,7 @@ let songIndex = 0;
 let audioElement = new Audio('songs/1.mp3');
 let masterPlay = document.getElementById('masterPlay');
 let myProgressBar = document.getElementById('myProgressBar');
+let volumeBar = document.getElementById('volumeBar');
 let gif = document.getElementById('gif');
 let masterSongName = document.getElementById('masterSongName');
 let songItems = Array.from(document.getElementsByClassName('songItem'));
@@ -52,6 +53,10 @@ audioElement.addEventListener('timeupdate', ()=>{
 
 myProgressBar.addEventListener('change', ()=>{
     audioElement.currentTime = myProgressBar.value * audioElement.duration / 100;
+})
+
+volumeBar.addEventListener('input', ()=>{
+    audioElement.volume = volumeBar.value / 100;
 })
 
 const makeAllPlays = ()=>{
